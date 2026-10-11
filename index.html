@@ -463,10 +463,10 @@ body{transition:background-color .4s,color .4s}
     <div class="sec-head">
       <span class="sec-no">03 / 06</span>
       <h2 class="sec-title">Projects</h2>
-      <span class="sec-count" id="pcount">5 projects</span>
+      <span class="sec-count" id="pcount">4 projects</span>
     </div>
 
-    <p class="intro reveal">Five things that used to be slow, manual or guessed at, and what each one looks like now.</p>
+    <p class="intro reveal">Four things that used to be slow, manual or guessed at, and what each one looks like now.</p>
 
     <div class="plist">
     <!--
@@ -474,10 +474,10 @@ body{transition:background-color .4s,color .4s}
       <div class="plist"> where you want it, then fill it in.
       status: <span class="status live">Live</span>, or <span class="status">Done</span> / Building
       data-link: paste the project URL to switch on the view arrow; leave "" if none yet.
-      Then update the count ("5 projects") in the Projects header.
+      Then update the count ("4 projects") in the Projects header.
 
       <article class="proj" data-link="" data-k="auto">
-        <div class="pid"><b>P-06</b><span class="kind">Automation</span></div>
+        <div class="pid"><b>P-05</b><span class="kind">Automation</span></div>
         <div class="pbody">
           <div class="phead"><h3>Project Title</h3><span class="status">Done</span></div>
           <div class="steps">
@@ -489,67 +489,54 @@ body{transition:background-color .4s,color .4s}
         </div>
       </article>
     -->
-      <article class="proj" data-link="" data-k="model">
-        <div class="pid"><b>P-01</b><span class="kind">Modelling</span></div>
+      <article class="proj" data-link="" data-k="auto">
+        <div class="pid"><b>P-01</b><span class="kind">Automation</span></div>
         <div class="pbody">
-          <div class="phead"><h3>Project Finance Model Audits</h3><span class="status">Done</span></div>
+          <div class="phead"><h3>Regulation-First Term Sheet Generator</h3><span class="status live">Live</span></div>
           <div class="steps">
-            <div class="step"><span class="label">Problem</span><p>Four 33 to 50 MW solar models across 4 states were heading to decision-makers without an independent check.</p></div>
-            <div class="step"><span class="label">Approach</span><p>Audited each model line by line, rebuilding tax, IRR and debt logic from first principles and comparing outputs.</p></div>
-            <div class="step"><span class="label">Tools Used</span><div class="stack"><span>Excel</span><span>IRR</span><span>DSCR</span><span>Tax &amp; depreciation</span></div></div>
-            <div class="step impact"><span class="label">Impact</span><span class="big">4<small> / 4</small></span><p>models had material errors caught: cross-wired tax, double-counted IRR, a hidden tax holiday, DSCR breaches.</p></div>
+            <div class="step"><span class="label">Problem</span><p>Term sheets took days. The team priced deals first and worked backwards into the regulations, so every draft needed rework.</p></div>
+            <div class="step"><span class="label">Approach</span><p>Reversed the order. The generator starts from state charges and policy rules, then fills the commercial terms into a fixed template.</p></div>
+            <div class="step"><span class="label">Tools Used</span><div class="stack"><span>Excel</span><span>Google Sheets</span><span>Tariff orders</span></div></div>
+            <div class="step impact"><span class="label">Impact</span><span class="big">&lt;3<small> min</small></span><p>per term sheet, down from days. Internal sign-off is now the only slow step.</p></div>
           </div>
         </div>
       </article>
 
-      <article class="proj" data-link="" data-k="model">
-        <div class="pid"><b>P-02</b><span class="kind">Modelling</span></div>
+      <article class="proj" data-link="" data-k="auto">
+        <div class="pid"><b>P-02</b><span class="kind">Automation</span></div>
         <div class="pbody">
-          <div class="phead"><h3>Battery Storage Sizing for a Utility Tender</h3><span class="status">Done</span></div>
+          <div class="phead"><h3>Scenario Sweep Engine</h3><span class="status live">Live</span></div>
           <div class="steps">
-            <div class="step"><span class="label">Problem</span><p>A solar-plus-storage bid assumed a 60 MWh battery, the most expensive line in the build.</p></div>
-            <div class="step"><span class="label">Approach</span><p>Broke the power purchase agreement down clause by clause, built an energy loss model, and tested sizes against the shortfall tolerances.</p></div>
-            <div class="step"><span class="label">Tools Used</span><div class="stack"><span>Excel</span><span>17-article PPA review</span><span>51 months of price data</span></div></div>
-            <div class="step impact"><span class="label">Impact</span><span class="big">−16.7<small>%</small></span><p>storage capacity (60 → 50 MWh) while staying above the 1.7 MWh/MW floor.</p></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="proj" data-link="" data-k="model">
-        <div class="pid"><b>P-03</b><span class="kind">Modelling</span></div>
-        <div class="pbody">
-          <div class="phead"><h3>Reusable Debt and Capex Toolkit</h3><span class="status live">In use</span></div>
-          <div class="steps">
-            <div class="step"><span class="label">Problem</span><p>Every new deal rebuilt the same debt schedule and capex sheet from scratch.</p></div>
-            <div class="step"><span class="label">Approach</span><p>Built one debt model with switchable repayment modes, plus a capex calculator with 3 design toggles.</p></div>
-            <div class="step"><span class="label">Tools Used</span><div class="stack"><span>Excel</span><span>Sculpted DSCR</span><span>Scenario toggles</span></div></div>
-            <div class="step impact"><span class="label">Impact</span><span class="big">4<small> in 1</small></span><p>repayment structures in one model, reused across deals instead of rebuilt.</p></div>
+            <div class="step"><span class="label">Problem</span><p>Testing a financial model meant changing inputs by hand, one case at a time, and copying outputs out.</p></div>
+            <div class="step"><span class="label">Approach</span><p>Built an engine that drives live Excel models through every combination of inputs and logs the results to one table.</p></div>
+            <div class="step"><span class="label">Tools Used</span><div class="stack"><span>Python</span><span>Excel automation</span><span>Factorial design</span></div></div>
+            <div class="step impact"><span class="label">Impact</span><span class="big">1M<small>+</small></span><p>scenarios run with zero manual edits.</p></div>
           </div>
         </div>
       </article>
 
       <article class="proj" data-link="" data-k="research">
-        <div class="pid"><b>P-04</b><span class="kind">Research</span></div>
+        <div class="pid"><b>P-03</b><span class="kind">Research</span></div>
         <div class="pbody">
-          <div class="phead"><h3>Substation Scoring Model</h3><span class="status">Done</span></div>
+          <div class="phead"><h3>State-Wise Landed Cost Engine</h3><span class="status">Building</span></div>
           <div class="steps">
-            <div class="step"><span class="label">Problem</span><p>Picking where to connect a solar plant was guesswork across hundreds of substations.</p></div>
-            <div class="step"><span class="label">Approach</span><p>Built a weighted score on spare capacity, solar irradiance and three more factors, then shortlisted the top sites.</p></div>
-            <div class="step"><span class="label">Tools Used</span><div class="stack"><span>Excel</span><span>Grid capacity data</span><span>Irradiance (GHI)</span></div></div>
-            <div class="step impact"><span class="label">Impact</span><span class="big">5<small> factors</small></span><p>turn hundreds of substations into one ranked shortlist, reusable for any state.</p></div>
+            <div class="step"><span class="label">Problem</span><p>The true cost of power to a client depends on dozens of state charges, and the team was quoting them from memory and news articles.</p></div>
+            <div class="step"><span class="label">Approach</span><p>Built a dataset of transmission, wheeling, losses, banking and duty by utility and voltage level, from regulator and utility orders only.</p></div>
+            <div class="step"><span class="label">Tools Used</span><div class="stack"><span>Excel</span><span>Regulator tariff orders</span><span>Utility filings</span></div></div>
+            <div class="step impact"><span class="label">Impact</span><span class="big">15<small>+ states</small></span><p>mapped so far, feeding term sheets with a target of over 95% confidence per number.</p></div>
           </div>
         </div>
       </article>
 
-      <article class="proj" data-link="" data-k="product">
-        <div class="pid"><b>P-05</b><span class="kind">Strategy</span></div>
+      <article class="proj" data-link="" data-k="data">
+        <div class="pid"><b>P-04</b><span class="kind">Data &amp; ML</span></div>
         <div class="pbody">
-          <div class="phead"><h3>The Campus Sponsorship Playbook</h3><span class="status">Done</span></div>
+          <div class="phead"><h3>LinkedIn Hiring Efficiency Analysis</h3><span class="status">Done</span></div>
           <div class="steps">
-            <div class="step"><span class="label">Problem</span><p>Sponsorship at the scale of ₹81L+ had no written method the next team could pick up.</p></div>
-            <div class="step"><span class="label">Approach</span><p>Wrote an operating framework: sponsor categories, pricing with margin floors, team design, compliance, fund flow, and a people-and-AI split of BD work.</p></div>
-            <div class="step"><span class="label">Tools Used</span><div class="stack"><span>Value-based pricing</span><span>Process design</span><span>AI tools</span></div></div>
-            <div class="step impact"><span class="label">Impact</span><span class="big">20<small> pages</small></span><p>of method the next team can run without starting from zero.</p></div>
+            <div class="step"><span class="label">Problem</span><p>What makes a job posting attract candidates, and how efficiently does it hire?</p></div>
+            <div class="step"><span class="label">Approach</span><p>Cleaned large LinkedIn datasets, engineered hiring-efficiency metrics, and compared postings across segments.</p></div>
+            <div class="step"><span class="label">Tools Used</span><div class="stack"><span>Python</span><span>Pandas · NumPy</span><span>SQL</span></div></div>
+            <div class="step impact"><span class="label">Impact</span><span class="big">3<small> drivers</small></span><p>identified: salary band, remote status and location.</p></div>
           </div>
         </div>
       </article>
