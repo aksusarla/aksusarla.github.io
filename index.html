@@ -5,21 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Abhilash Krishna Susarla: analyst and product portfolio. Experience, projects, skills and contact.">
 <meta name="color-scheme" content="light dark">
-<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}
-/* Wordmark logos: one file per theme, no tile */
-.wm{height:16px;width:auto}
-.wm-light{display:none}
-:root[data-mode="light"] .wm-light{display:inline}
-:root[data-mode="light"] .wm-dark{display:none}
-
-/* Logos sit at the top right of each role */
-.role > div:nth-child(2){position:relative}
-.role .org .logo,.role .org .wm{position:absolute;top:2px;right:0}
-.role .org .logo{height:44px;padding:4px}
-.role .org .wm{height:26px;top:10px}
-.role h3,.role .org{padding-right:150px}
-@media (max-width:560px){.role h3,.role .org{padding-right:60px}.role .org .logo{height:36px}.role .org .wm{height:16px}}
-</style>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Abhilash Susarla</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -301,6 +287,43 @@ body{transition:background-color .4s,color .4s}
 
 .btn.dl{display:inline-flex;align-items:center;gap:8px;margin-top:28px;text-decoration:none;font-size:var(--step-1);padding:12px 20px}
 .btn.dl svg{width:18px;height:18px}
+
+/* Wordmark logos: one file per theme, no tile */
+.wm{height:16px;width:auto}
+.wm-light{display:none}
+:root[data-mode="light"] .wm-light{display:inline}
+:root[data-mode="light"] .wm-dark{display:none}
+
+/* Logos sit at the top right of each role */
+.role > div:nth-child(2){position:relative}
+.role .org .logo,.role .org .wm{position:absolute;top:2px;right:0}
+.role .org .logo{height:44px;padding:4px}
+.role .org .wm{height:26px;top:10px}
+.role h3,.role .org{padding-right:150px}
+@media (max-width:560px){.role h3,.role .org{padding-right:60px}.role .org .logo{height:36px}.role .org .wm{height:16px}}
+
+.phases{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px;max-width:62ch}
+.phases li::marker{color:var(--muted);font-weight:600}
+.phases b{font-weight:700}
+
+/* Six principles: three per row */
+.think{grid-template-columns:repeat(3,1fr)!important}
+.think .rule{padding:28px 24px 32px 0!important;border-right:1px solid var(--line)!important;border-top:0!important}
+.think .rule:nth-child(3n+2),.think .rule:nth-child(3n){padding-left:24px!important}
+.think .rule:nth-child(3n){border-right:0!important}
+.think .rule:nth-child(n+4){border-top:1px solid var(--line)!important}
+.rule .proof{margin-top:auto;padding-top:10px;border-top:1px dashed var(--line);font-size:var(--step-0);color:var(--fg);font-weight:600}
+@media (max-width:900px){
+  .think{grid-template-columns:1fr 1fr!important}
+  .think .rule{padding-left:0!important;border-right:0!important;border-top:0!important}
+  .think .rule:nth-child(even){padding-left:24px!important;border-left:1px solid var(--line)}
+  .think .rule:nth-child(n+3){border-top:1px solid var(--line)!important}
+}
+@media (max-width:560px){
+  .think{grid-template-columns:1fr!important}
+  .think .rule,.think .rule:nth-child(even){padding-left:0!important;border-left:0}
+  .think .rule + .rule{border-top:1px solid var(--line)!important}
+}
 </style>
 </head>
 <body>
@@ -332,7 +355,7 @@ body{transition:background-color .4s,color .4s}
         <span class="ln"><span class="it">Abhilash Krishna</span></span>
         <span class="ln"><span class="it">Susarla.</span></span>
       </h1>
-      <p class="lede">Most teams wait for a playbook. <b>I would rather write one.</b> New industry, a three-person team and no manual. Three months later, <b>it runs on the tools I built.</b></p>
+      <p class="lede"><b>I bring structure to ambiguity.</b> Where work is fragmented, undocumented or improvised, I build the systems, clarity and momentum that let teams operate with confidence, and I leave every process <b>measurably better than I found it.</b></p>
       <p class="focus">Analysis <i>|</i> Automation <i>|</i> Product Thinking <i>|</i> Financial Modelling <i>|</i> Business Development</p>
     </div>
   </div>
@@ -340,9 +363,9 @@ body{transition:background-color .4s,color .4s}
   <div class="ledger" aria-label="Key numbers">
     <div class="stat"><span class="k">#01</span><span class="v"><span class="cu" data-to="2500">2,500</span><small>+ MW</small></span><span class="d">of solar deals evaluated in about 3 months</span></div>
     <div class="stat"><span class="k">#02</span><span class="v">₹<span class="cu" data-to="81">81</span><small>L+</small></span><span class="d">raised in sponsorship across 50+ partners</span></div>
-    <div class="stat"><span class="k">#03</span><span class="v">&lt;3<small> min</small></span><span class="d">to draft a term sheet, down from days</span></div>
+    <div class="stat"><span class="k">#03</span><span class="v">&lt;3<small> min</small></span><span class="d">to generate a 20-page term sheet, down from days</span></div>
     <div class="stat"><span class="k">#04</span><span class="v"><span class="cu" data-to="1">1</span>M<small>+</small></span><span class="d">scenarios run through my Python engine</span></div>
-    <div class="stat"><span class="k">#05</span><span class="v"><span class="cu" data-to="15">15</span><small>+</small></span><span class="d">Indian states mapped for regulation and cost</span></div>
+    <div class="stat"><span class="k">#05</span><span class="v"><span class="cu" data-to="15">15</span><small>+</small></span><span class="d">Indian states mapped from 80+ regulatory documents</span></div>
     <div class="stat"><span class="k">#06</span><span class="v"><span class="cu" data-to="100">100</span><small>+</small></span><span class="d">deals tracked in a system I built</span></div>
     <div class="stat"><span class="k">#07</span><span class="v"><span class="cu" data-to="5000">5,000</span><small>+</small></span><span class="d">daily active users on a campus app I helped roll out</span></div>
     <div class="stat"><span class="k">#08</span><span class="v"><span class="cu" data-to="7.5" data-dec="1">7.5</span><small>×</small></span><span class="d">growth in a bank partner's campus account</span></div>
@@ -394,9 +417,9 @@ body{transition:background-color .4s,color .4s}
           <h3>Intern, Energy Transition</h3>
           <p class="org"><img class="wm wm-dark" src="logos/zetwerk-dark.png" alt="Zetwerk" onerror="this.remove()"><img class="wm wm-light" src="logos/zetwerk-light.png" alt="Zetwerk" onerror="this.remove()">Zetwerk Manufacturing · Central Org · Bengaluru</p>
           <ul>
-            <li><span>Joined as one of the first people in a new <b>3-person</b> solar power-producer team and built the technical and regulatory groundwork from zero.</span></li>
+            <li><span>Joined as one of the first members of a new <b>3-person</b> solar power-producer team and built its technical and regulatory groundwork from zero.</span></li>
             <li><span>Built the deal pipeline system the team runs on: a master tracker, live views, a management dashboard and a daily email digest at <b>08:00 IST</b>.</span></li>
-            <li><span>Cut term-sheet drafting from days to <b>under 3 minutes</b> by building it regulation-first instead of working backwards from price.</span></li>
+            <li><span>Automated the 20-page term sheet, the first step towards a 25-year power deal, cutting preparation from days to <b>under 3 minutes</b> and pricing it regulation-first.</span></li>
             <li><span>Audited <b>4</b> live project-finance models and caught material errors before they reached decision-makers.</span></li>
             <li><span>Ran tender analysis, IRR and debt modelling, and regulatory research across <b>15+</b> states.</span></li>
           </ul>
@@ -438,8 +461,8 @@ body{transition:background-color .4s,color .4s}
           <h3>Summer Intern</h3>
           <p class="org"><img class="logo" src="logos/dunlin.png" alt="" onerror="this.remove()">Dunlin.ai · BITS Practice School-1</p>
           <ul>
-            <li><span>Supported go-to-market content, outreach and market research for an AI bookkeeping product.</span></li>
-            <li><span>Ran outreach to about <b>50</b> Indian CPA firms serving US clients.</span></li>
+            <li><span>Supported go-to-market content and market research for an AI bookkeeping product.</span></li>
+            <li><span>Ran outreach to <b>50</b> Indian CPA firms serving US clients.</span></li>
           </ul>
         </div>
       </article>
@@ -451,7 +474,7 @@ body{transition:background-color .4s,color .4s}
           <p class="org"><img class="logo" src="logos/bits.png" alt="" onerror="this.remove()">Student Welfare Division Nucleus · BITS Pilani Hyderabad</p>
           <ul>
             <li><span>Selected as <b>1 of 4</b> from 120+ applicants to work with the Chief Warden and Associate Dean on technology for about 5,000 residential students across 12 hostels.</span></li>
-            <li><span>Scoped, aligned stakeholders on and supported the rollout of the SWD App: Gate Pass cut peak exit waits from <b>30–60 minutes to zero</b>, and SWDPay, a closed-loop campus wallet, serves <b>5,000+</b> daily active users.</span></li>
+            <li><span>Scoped the SWD App, aligned stakeholders and supported its rollout: Gate Pass cut peak exit waits from <b>30–60 minutes to zero</b>, and SWDPay, a closed-loop campus wallet, serves <b>5,000+</b> daily active users.</span></li>
             <li><span>Wrote <b>4</b> user manuals for students, security guards, hostel admins and mess vendors, which cleared first-quarter rollout friction and set standard operating procedures.</span></li>
           </ul>
         </div>
@@ -492,42 +515,63 @@ body{transition:background-color .4s,color .4s}
       <article class="proj" data-link="" data-k="auto">
         <div class="pid"><b>P-01</b><span class="kind">Automation</span></div>
         <div class="pbody">
-          <div class="phead"><h3>Regulation-First Term Sheet Generator</h3><span class="status live">Live</span></div>
+          <div class="phead"><h3>Automated Term Sheet &amp; Landed Cost Engine</h3><span class="status live">Live</span></div>
           <div class="steps">
-            <div class="step"><span class="label">Problem</span><p>Term sheets took days. The team priced deals first and worked backwards into the regulations, so every draft needed rework.</p></div>
-            <div class="step"><span class="label">Approach</span><p>Reversed the order. The generator starts from state charges and policy rules, then fills the commercial terms into a fixed template.</p></div>
-            <div class="step"><span class="label">Tools Used</span><div class="stack"><span>Excel</span><span>Google Sheets</span><span>Tariff orders</span></div></div>
-            <div class="step impact"><span class="label">Impact</span><span class="big">&lt;3<small> min</small></span><p>per term sheet, down from days. Internal sign-off is now the only slow step.</p></div>
+            <div class="step"><span class="label">Problem</span><p>The term sheet is a 20-page document and the first major step towards signing a 25-year power deal. It took days to prepare, and its pricing was first built on IEX market data, an accepted source that misses most of what a consumer actually pays: state regulations, utility charges and policy orders.</p></div>
+            <div class="step"><span class="label">Approach</span>
+              <ol class="phases">
+                <li><b>Baseline.</b> Built a fast first version on IEX market data to get pricing moving.</li>
+                <li><b>Research.</b> Parsed 80+ regulatory orders and documents across 15 states to build a landed cost engine covering transmission, wheeling, losses, banking, duty and exemptions by utility and voltage level.</li>
+                <li><b>Automation.</b> Wrote Apps Script that takes a deal's inputs, pulls in the landed cost and generates the complete 20-page term sheet, ready to send.</li>
+                <li><b>Negotiation.</b> Compared each client's true landed cost against what we could deliver, revealing the realistic range we could negotiate within.</li>
+              </ol>
+            </div>
+            <div class="step"><span class="label">Tools Used</span><div class="stack"><span>Google Sheets</span><span>Apps Script</span><span>Document generation</span><span>IEX market data</span><span>Regulator tariff orders</span></div></div>
+            <div class="step impact"><span class="label">Impact</span><span class="big">&lt;3<small> min</small></span><p>to generate a ready 20-page term sheet, down from days, priced on 80+ primary documents across 15 states, with a clear negotiating range for every deal.</p></div>
           </div>
         </div>
       </article>
 
-      <article class="proj" data-link="" data-k="auto">
-        <div class="pid"><b>P-02</b><span class="kind">Automation</span></div>
+      <article class="proj" data-link="" data-k="model">
+        <div class="pid"><b>P-02</b><span class="kind">Financial Modelling</span></div>
         <div class="pbody">
-          <div class="phead"><h3>Scenario Sweep Engine</h3><span class="status live">Live</span></div>
+          <div class="phead"><h3>IRR Model &amp; Deal Optimisation Engine</h3><span class="status live">In use</span></div>
           <div class="steps">
-            <div class="step"><span class="label">Problem</span><p>Testing a financial model meant changing inputs by hand, one case at a time, and copying outputs out.</p></div>
-            <div class="step"><span class="label">Approach</span><p>Built an engine that drives live Excel models through every combination of inputs and logs the results to one table.</p></div>
-            <div class="step"><span class="label">Tools Used</span><div class="stack"><span>Python</span><span>Excel automation</span><span>Factorial design</span></div></div>
-            <div class="step impact"><span class="label">Impact</span><span class="big">1M<small>+</small></span><p>scenarios run with zero manual edits.</p></div>
+            <div class="step"><span class="label">Problem</span><p>The team had only a rough sense of how a solar project's cash flows behaved, and deals kept stalling. A single IRR at a single tariff said whether a deal worked, but not which combination of levers would make it work.</p></div>
+            <div class="step"><span class="label">Approach</span>
+              <ol class="phases">
+                <li><b>Model.</b> Studied 30+ financial models used in the market and built one robust 25-year cash-flow model that calculates project IRR.</li>
+                <li><b>Sensitivity.</b> Added a tariff sensitivity layer that reports the key returns across a full range of tariffs.</li>
+                <li><b>Optimisation.</b> Defined realistic ranges for every major input and acceptable ranges for the outputs, then ran 1M+ scenarios to find the combinations that make a deal viable.</li>
+                <li><b>Impact.</b> After a project is accepted, measured how much each cost reduction or revenue gain moves the returns.</li>
+              </ol>
+            </div>
+            <div class="step"><span class="label">Tools Used</span><div class="stack"><span>Excel</span><span>Python</span><span>25-year cash-flow model</span><span>Scenario optimisation</span></div></div>
+            <div class="step impact"><span class="label">Impact</span><span class="big">100<small>+ deals</small></span><p>run through the engine, each leaving business development with a clear negotiating range instead of a single number.</p></div>
           </div>
         </div>
       </article>
 
-      <article class="proj" data-link="" data-k="research">
-        <div class="pid"><b>P-03</b><span class="kind">Research</span></div>
+
+      <article class="proj" data-link="" data-k="product">
+        <div class="pid"><b>P-03</b><span class="kind">AI &amp; Operations</span></div>
         <div class="pbody">
-          <div class="phead"><h3>State-Wise Landed Cost Engine</h3><span class="status">Building</span></div>
+          <div class="phead"><h3>AI-Powered Sponsorship Operations</h3><span class="status">Done</span></div>
           <div class="steps">
-            <div class="step"><span class="label">Problem</span><p>The true cost of power to a client depends on dozens of state charges, and the team was quoting them from memory and news articles.</p></div>
-            <div class="step"><span class="label">Approach</span><p>Built a dataset of transmission, wheeling, losses, banking and duty by utility and voltage level, from regulator and utility orders only.</p></div>
-            <div class="step"><span class="label">Tools Used</span><div class="stack"><span>Excel</span><span>Regulator tariff orders</span><span>Utility filings</span></div></div>
-            <div class="step impact"><span class="label">Impact</span><span class="big">15<small>+ states</small></span><p>mapped so far, feeding term sheets with a target of over 95% confidence per number.</p></div>
+            <div class="step"><span class="label">Problem</span><p>Sponsorship for a 10K+ footfall fest ran on scattered spreadsheets, cold lists and individual memory. Every season the team relearned the same tasks, and nothing carried over.</p></div>
+            <div class="step"><span class="label">Approach</span>
+              <ol class="phases">
+                <li><b>Prospecting.</b> Used browser-extension crawlers across Instagram, Facebook and other festivals' websites to map which brands sponsored them and the accounts behind those deals, then researched the people who made the decisions.</li>
+                <li><b>Paperwork.</b> Set up AI to draft a first-version MoU straight from meeting notes or structured prompts, with the right plugins and guardrails.</li>
+                <li><b>Follow-ups.</b> Used AI to draft and schedule follow-ups so no account went quiet.</li>
+                <li><b>Operations.</b> Built AI-assisted frameworks for the repeated work: training new members, team incentives, tracking sponsor-provided inventory and keeping one clean source of data.</li>
+              </ol>
+            </div>
+            <div class="step"><span class="label">Tools Used</span><div class="stack"><span>Web crawlers</span><span>Instagram · Facebook · fest sites</span><span>AI note-takers</span><span>LLM prompting &amp; guardrails</span><span>Google Sheets</span></div></div>
+            <div class="step impact"><span class="label">Impact</span><span class="big">₹81<small>L+</small></span><p>raised across 50+ partners, with conversion up about 30% year on year, and a system the next team could run without starting from zero.</p></div>
           </div>
         </div>
       </article>
-
       <article class="proj" data-link="" data-k="data">
         <div class="pid"><b>P-04</b><span class="kind">Data &amp; ML</span></div>
         <div class="pbody">
@@ -547,14 +591,16 @@ body{transition:background-color .4s,color .4s}
     <div class="sec-head">
       <span class="sec-no">04 / 06</span>
       <h2 class="sec-title">How I Think</h2>
-      <span class="sec-count">4 rules</span>
+      <span class="sec-count">6 principles</span>
     </div>
-    <p class="manifesto reveal">Drop me into something new and messy. In a few weeks I will know how it works, where it breaks, and what to build so the team and its users move faster.</p>
+    <p class="manifesto reveal">Before I build anything, I understand how the work truly runs: the rules behind it, the people inside it and the points where it breaks. Only then do I design the fix.</p>
     <div class="think">
-      <div class="rule"><span class="num">1</span><h4>Read the rule before the spreadsheet.</h4><p>Most slow processes are slow because people skip the source. I start from the regulation, the contract or the raw data.</p></div>
-      <div class="rule"><span class="num">2×</span><h4>Do it twice, then automate it.</h4><p>The second time I do something by hand, I start building the tool that does it for the whole team.</p></div>
-      <div class="rule"><span class="num">0</span><h4>Secondary sources in the final number.</h4><p>Every figure I quote traces back to a government order, a filing or a model I can open.</p></div>
-      <div class="rule"><span class="num">1</span><h4>Check before anything ships.</h4><p>I run my own pre-review on structure, numbers and language before work goes to a manager.</p></div>
+      <div class="rule"><span class="num">01</span><h4>Leave it better than I found it.</h4><p>Every piece of work should leave the business, and the people it touches, better off. I put a number on what changed, not just on what was delivered.</p><p class="proof">Term sheets went from days to under 3 minutes · P-01</p></div>
+      <div class="rule"><span class="num">02</span><h4>Automate the second time.</h4><p>If a task repeats, it deserves a system. Freeing people from routine work moves their time to the decisions that need them.</p><p class="proof">Apps Script term sheets, AI-drafted MoUs · P-01, P-03</p></div>
+      <div class="rule"><span class="num">03</span><h4>Data first, then judgement.</h4><p>Trends show what happened. Judgement on what they mean shows what to do next. I bring both to every call I make.</p><p class="proof">1M+ scenarios distilled into one negotiating range per deal · P-02</p></div>
+      <div class="rule"><span class="num">04</span><h4>Learn fast, build with AI.</h4><p>AI can make almost every workstream faster and better. I am learning to use it well: clear intent, the right tools, firm guardrails and a human check.</p><p class="proof">AI prospecting, MoUs and follow-ups for 50+ sponsors · P-03</p></div>
+      <div class="rule"><span class="num">05</span><h4>Own the outcome.</h4><p>I take responsibility for results, not tasks, and I step in where nobody owns the problem.</p><p class="proof">Took over fest sponsorship and raised ₹81L+ · StuCCAn</p></div>
+      <div class="rule"><span class="num">06</span><h4>People make the work.</h4><p>Strong results come from people who are well in body and mind, and from leadership that builds a culture worth belonging to.</p><p class="proof">Led and trained a 30-member sponsorship team · StuCCAn</p></div>
     </div>
   </section>
 
