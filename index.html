@@ -486,10 +486,10 @@ body{transition:background-color .4s,color .4s}
     <div class="sec-head">
       <span class="sec-no">03 / 06</span>
       <h2 class="sec-title">Projects</h2>
-      <span class="sec-count" id="pcount">5 projects</span>
+      <span class="sec-count" id="pcount">6 projects</span>
     </div>
 
-    <p class="intro reveal">Four things that used to be slow, manual or guessed at, what each one looks like now, and a go-to-market plan for an AI product.</p>
+    <p class="intro reveal">Five things that used to be slow, manual or guessed at, what each one looks like now, and a go-to-market plan for an AI product.</p>
 
     <div class="plist">
     <!--
@@ -601,6 +601,25 @@ body{transition:background-color .4s,color .4s}
             </div>
             <div class="step"><span class="label">Tools Used</span><div class="stack"><span>Market research</span><span>BCG · DataReportal · NapoleonCat</span><span>Trustpilot reviews</span><span>Funnel modelling</span><span>Python</span></div></div>
             <div class="step impact"><span class="label">Impact</span><span class="big">500<small> users</small></span><p>planned in 30 days on a ₹10,000 ads test and direct outreach, with one metric to track it. Shared with Flam's permission.</p></div>
+          </div>
+        </div>
+      </article>
+      <article class="proj" data-link="" data-k="data">
+        <div class="pid"><b>P-06</b><span class="kind">Data &amp; BD</span></div>
+        <div class="pbody">
+          <div class="phead"><h3>Solar Offtaker Screen: BRSR-Based BD Targeting</h3><span class="status live">Live</span></div>
+          <div class="steps">
+            <div class="step"><span class="label">Problem</span><p>Finding new commercial and industrial offtakers for solar power meant relying on known contacts and market data that missed most public companies entirely. There was no systematic way to tell which NSE-listed companies were actually worth approaching.</p></div>
+            <div class="step"><span class="label">Approach</span>
+              <ol class="phases">
+                <li><b>Source.</b> Parsed 1,267 SEBI BRSR (Business Responsibility and Sustainability Report) XBRL filings of NSE-listed companies in Python.</li>
+                <li><b>Dataset.</b> Built a company-level dataset of electricity use, renewable share and turnover straight from the filings.</li>
+                <li><b>Screen.</b> Ran a multi-stage funnel (data-quality checks, sector exclusions, turnover and grid-demand thresholds, renewable-share cutoff) to narrow 1,267 filers down to a real shortlist.</li>
+                <li><b>Dashboard.</b> Built an interactive HTML dashboard: sector-level renewable-vs-grid breakdowns, a turnover-vs-grid-demand scatter by sector, the screening funnel, and a sortable shortlist table linked back to each company's source filing.</li>
+              </ol>
+            </div>
+            <div class="step"><span class="label">Tools Used</span><div class="stack"><span>Python</span><span>Pandas</span><span>SEBI BRSR / XBRL filings</span><span>Interactive HTML dashboard</span></div></div>
+            <div class="step impact"><span class="label">Impact</span><span class="big">266<small> companies</small></span><p>shortlisted from 1,267 filers, representing an estimated 56,701 MWp of solar potential, used at Zetwerk to prioritise Business Development outreach to commercial and industrial offtakers.</p></div>
           </div>
         </div>
       </article>
