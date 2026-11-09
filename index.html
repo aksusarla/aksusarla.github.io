@@ -685,7 +685,7 @@ body{transition:background-color .4s,color .4s}
         <div class="facts">
           <span>Roles <b>Analyst · Product Management</b></span>
         </div>
-        <a class="btn dl" href="resume.pdf" download="AbhilashSusarla20Oct2026.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Download Resume</a>
+        <a class="btn dl" href="resume.pdf" download="AbhilashSusarla04Nov2026.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Download Resume</a>
       </div>
     </div>
     <footer>
@@ -814,19 +814,6 @@ body{transition:background-color .4s,color .4s}
     root.setAttribute('data-theme',next);
     try{localStorage.setItem('theme',next);}catch(e){}
     paint();
-  });
-
-  // Project filter
-  var btns=document.querySelectorAll('.filters button');
-  var items=document.querySelectorAll('.proj');
-  var count=document.getElementById('pcount');
-  btns.forEach(function(b){
-    b.addEventListener('click',function(){
-      var f=b.getAttribute('data-f'),n=0;
-      btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
-      items.forEach(function(p){var show=f==='all'||p.getAttribute('data-k')===f;p.hidden=!show;if(show)n++;});
-      count.textContent=String(n).padStart(2,'0')+' shown';
-    });
   });
 
 })();
