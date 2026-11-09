@@ -54,11 +54,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--fg);outline-offset:
 /* Top bar with scroll progress */
 .bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
 .bar .in{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,4vw,40px);display:flex;align-items:center;justify-content:space-between;gap:16px;height:52px;font-size:var(--step-0)}
-.bar nav{display:flex;justify-content:space-between;gap:22px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;min-width:0;flex:1}
+.bar nav{position:relative;display:flex;justify-content:space-between;gap:22px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;min-width:0;flex:1}
 .bar nav a{text-decoration:none;color:var(--faint);font-weight:500;transition:color .25s}
 .bar nav a span{margin-right:5px;font-weight:400}
 .bar nav a:hover,.bar nav a.on{color:var(--fg)}
 .bar nav a.on{font-weight:700}
+.nav-ind{position:absolute;left:0;bottom:-7px;height:2px;width:0;background:var(--fg);transition:transform .4s var(--ease),width .4s var(--ease);pointer-events:none}
 .progress{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--fg);transform-origin:0 50%;transform:scaleX(0)}
 @media (max-width:720px){.bar nav{justify-content:flex-start;gap:18px}}
 
@@ -193,8 +194,8 @@ section.collapsed{padding-block:36px}
 
 /* Thinking */
 .manifesto{font-size:clamp(1.6rem,3.6vw,2.6rem);font-weight:800;letter-spacing:-0.045em;line-height:1.15;max-width:26ch;margin:0 0 48px;margin-left:144px;text-wrap:pretty}
-.reveal .w{color:var(--ghost);transition:color .25s}
-.reveal .w.on{color:var(--fg);transition:color 1.2s}
+.reveal,.fade-rise{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in,.fade-rise.in{opacity:1;transform:none}
 @media (max-width:720px){.manifesto{margin-left:0}}
 .think{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-strong)}
 .rule{padding:24px 20px 28px 0;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:14px;min-width:0}
@@ -259,7 +260,7 @@ footer{border-top:1px solid var(--line);margin-top:40px;padding-top:16px;display
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;animation:none!important}
   html{scroll-behavior:auto}
-  .reveal .w{color:var(--fg)}
+  .reveal,.fade-rise{opacity:1!important;transform:none!important}
 }
 
 /* Project timeline: steps run top to bottom */
@@ -337,6 +338,7 @@ body{transition:background-color .4s,color .4s}
       <a href="#thinking"><span>04</span>How I Think</a>
       <a href="#education"><span>05</span>Education</a>
       <a href="#contact"><span>06</span>Contact</a>
+      <span class="nav-ind" id="navInd" aria-hidden="true"></span>
     </nav>
     <button type="button" class="theme" id="theme" aria-label="Switch to light mode">
       <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
@@ -411,7 +413,7 @@ body{transition:background-color .4s,color .4s}
     </div>
 
     <div class="xp">
-      <article class="role">
+      <article class="role fade-rise">
         <div class="when">Jul 2026 –<br>Jan 2027<span>6 months</span><span class="type">Internship</span></div>
         <div>
           <h3>Intern, Energy Transition</h3>
@@ -426,7 +428,7 @@ body{transition:background-color .4s,color .4s}
         </div>
       </article>
 
-      <article class="role">
+      <article class="role fade-rise">
         <div class="when">Jul 2025 –<br>Dec 2025<span>6 months</span><span class="type">Internship</span></div>
         <div>
           <h3>Research Intern</h3>
@@ -440,7 +442,7 @@ body{transition:background-color .4s,color .4s}
         </div>
       </article>
 
-      <article class="role">
+      <article class="role fade-rise">
         <div class="when">Jul 2024 –<br>Jun 2025<span>12 months</span><span class="type lead">Leadership</span></div>
         <div>
           <h3>Head of Department, Sponsorship &amp; Marketing</h3>
@@ -455,7 +457,7 @@ body{transition:background-color .4s,color .4s}
         </div>
       </article>
 
-      <article class="role">
+      <article class="role fade-rise">
         <div class="when">May 2024 –<br>Jul 2024<span>3 months</span><span class="type">Internship</span></div>
         <div>
           <h3>Summer Intern</h3>
@@ -467,7 +469,7 @@ body{transition:background-color .4s,color .4s}
         </div>
       </article>
 
-      <article class="role">
+      <article class="role fade-rise">
         <div class="when">2023 –<br>2025<span>2 years</span><span class="type lead">Leadership</span></div>
         <div>
           <h3>Strategic Team Member</h3>
@@ -499,7 +501,7 @@ body{transition:background-color .4s,color .4s}
       data-link: paste the project URL to switch on the view arrow; leave "" if none yet.
       Then update the count ("4 projects") in the Projects header.
 
-      <article class="proj" data-link="" data-k="auto">
+      <article class="proj fade-rise" data-link="" data-k="auto">
         <div class="pid"><b>P-05</b><span class="kind">Automation</span></div>
         <div class="pbody">
           <div class="phead"><h3>Project Title</h3><span class="status">Done</span></div>
@@ -512,7 +514,7 @@ body{transition:background-color .4s,color .4s}
         </div>
       </article>
     -->
-      <article class="proj" data-link="" data-k="auto">
+      <article class="proj fade-rise" data-link="" data-k="auto">
         <div class="pid"><b>P-01</b><span class="kind">Automation</span></div>
         <div class="pbody">
           <div class="phead"><h3>Automated Term Sheet &amp; Landed Cost Engine</h3><span class="status live">Live</span></div>
@@ -532,7 +534,7 @@ body{transition:background-color .4s,color .4s}
         </div>
       </article>
 
-      <article class="proj" data-link="" data-k="model">
+      <article class="proj fade-rise" data-link="" data-k="model">
         <div class="pid"><b>P-02</b><span class="kind">Financial Modelling</span></div>
         <div class="pbody">
           <div class="phead"><h3>IRR Model &amp; Deal Optimisation Engine</h3><span class="status live">In use</span></div>
@@ -553,7 +555,7 @@ body{transition:background-color .4s,color .4s}
       </article>
 
 
-      <article class="proj" data-link="" data-k="product">
+      <article class="proj fade-rise" data-link="" data-k="product">
         <div class="pid"><b>P-03</b><span class="kind">AI &amp; Operations</span></div>
         <div class="pbody">
           <div class="phead"><h3>AI-Powered Sponsorship Operations</h3><span class="status">Done</span></div>
@@ -572,7 +574,7 @@ body{transition:background-color .4s,color .4s}
           </div>
         </div>
       </article>
-      <article class="proj" data-link="" data-k="data">
+      <article class="proj fade-rise" data-link="" data-k="data">
         <div class="pid"><b>P-04</b><span class="kind">Data &amp; ML</span></div>
         <div class="pbody">
           <div class="phead"><h3>LinkedIn Hiring Efficiency Analysis</h3><span class="status">Done</span></div>
@@ -584,7 +586,7 @@ body{transition:background-color .4s,color .4s}
           </div>
         </div>
       </article>
-      <article class="proj" data-link="projects/flowy-gtm-plan.pdf" data-k="gtm">
+      <article class="proj fade-rise" data-link="projects/flowy-gtm-plan.pdf" data-k="gtm">
         <div class="pid"><b>P-05</b><span class="kind">Marketing &amp; GTM</span></div>
         <div class="pbody">
           <div class="phead"><h3>Flowy Go-To-Market Plan</h3><span class="status">Submitted</span></div>
@@ -604,7 +606,7 @@ body{transition:background-color .4s,color .4s}
           </div>
         </div>
       </article>
-      <article class="proj" data-link="" data-k="data">
+      <article class="proj fade-rise" data-link="" data-k="data">
         <div class="pid"><b>P-06</b><span class="kind">Data &amp; BD</span></div>
         <div class="pbody">
           <div class="phead"><h3>Solar Offtaker Screen: BRSR-Based BD Targeting</h3><span class="status live">Live</span></div>
@@ -700,34 +702,60 @@ body{transition:background-color .4s,color .4s}
 (function(){
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Count-up on load (final values are already in the HTML)
+  // Count-up, once, the first time the ledger scrolls into view
   if(!reduce){
     var els=document.querySelectorAll('.cu');
-    var t0=null,dur=1400;
+    var counted=false;
     function fmt(v,dec){return dec?v.toFixed(dec):Math.round(v).toLocaleString('en-US');}
-    function step(ts){
-      if(!t0)t0=ts;
-      var p=Math.min(1,(ts-t0)/dur),e=1-Math.pow(1-p,4);
-      els.forEach(function(el){var to=parseFloat(el.getAttribute('data-to')),dec=parseInt(el.getAttribute('data-dec')||'0',10);el.textContent=fmt(to*e,dec);});
-      if(p<1)requestAnimationFrame(step);
+    function runCount(){
+      if(counted)return;counted=true;
+      var t0=null,dur=1400;
+      function step(ts){
+        if(!t0)t0=ts;
+        var p=Math.min(1,(ts-t0)/dur),e=1-Math.pow(1-p,4);
+        els.forEach(function(el){var to=parseFloat(el.getAttribute('data-to')),dec=parseInt(el.getAttribute('data-dec')||'0',10);el.textContent=fmt(to*e,dec);});
+        if(p<1)requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
     }
-    requestAnimationFrame(step);
+    var ledgerEl=document.querySelector('.ledger');
+    if(ledgerEl&&window.IntersectionObserver){
+      var cio=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){if(e.isIntersecting){runCount();cio.disconnect();}});
+      },{threshold:0.3});
+      cio.observe(ledgerEl);
+    } else { runCount(); }
   }
 
-  // Word reveal: text turns solid word by word as you scroll
-  var reveals=[];
+  // Per-word hover italic on headings (static, no scroll cost)
   document.querySelectorAll('.it, .sec-title, .skill h4').forEach(function(el){
     el.innerHTML=el.textContent.trim().split(/\s+/).map(function(w){return '<span class="wi">'+w.replace(/&/g,'&amp;')+'</span>';}).join(' ');
   });
-  document.querySelectorAll('.reveal').forEach(function(el){
-    el.innerHTML=el.textContent.trim().split(/\s+/).map(function(w){return '<span class="w">'+w+'</span>';}).join(' ');
-    if(!reduce)reveals.push({el:el,words:el.querySelectorAll('.w')});
-  });
 
-  // Scroll progress, active nav, manifesto
+  // Fade-rise entrance: manifesto lines, role cards and project cards animate in once, the
+  // first time they cross into view. Cheap (IntersectionObserver, not a scroll handler).
+  var entrance=document.querySelectorAll('.reveal, .role.fade-rise, .proj.fade-rise');
+  if(reduce||!window.IntersectionObserver){
+    entrance.forEach(function(el){el.classList.add('in');});
+  } else {
+    var eio=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');eio.unobserve(e.target);}});
+    },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+    entrance.forEach(function(el){eio.observe(el);});
+  }
+
+  // Scroll progress, active nav + sliding nav indicator
   var bar=document.getElementById('progress');
+  var navInd=document.getElementById('navInd');
   var links=document.querySelectorAll('.bar nav a');
   var secs=Array.prototype.map.call(links,function(a){return document.querySelector(a.getAttribute('href'));});
+  function moveIndicator(cur){
+    if(!navInd)return;
+    if(cur<0){navInd.style.width='0px';return;}
+    var a=links[cur],navRect=a.parentNode.getBoundingClientRect(),r=a.getBoundingClientRect();
+    navInd.style.width=r.width+'px';
+    navInd.style.transform='translateX('+(r.left-navRect.left)+'px)';
+  }
   function onScroll(){
     var h=document.documentElement,max=h.scrollHeight-h.clientHeight;
     var p=max>0?h.scrollTop/max:0;
@@ -735,17 +763,16 @@ body{transition:background-color .4s,color .4s}
     var cur=-1;
     secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<window.innerHeight*0.35)cur=i;});
     links.forEach(function(a,i){a.classList.toggle('on',i===cur);});
-    var atEnd=h.scrollTop>=max-4;
-    reveals.forEach(function(o){
-      var r=o.el.getBoundingClientRect(),vh=window.innerHeight;
-      var prog=atEnd?1:(vh*0.85-r.top)/(r.height+vh*0.35);
-      prog=Math.max(0,Math.min(1,prog));
-      var n=Math.round(prog*o.words.length);
-      for(var i=0;i<o.words.length;i++){o.words[i].classList.toggle('on',i<n);}
-    });
+    moveIndicator(cur);
   }
-  window.addEventListener('scroll',onScroll,{passive:true});
-  window.addEventListener('resize',onScroll);
+  var ticking=false;
+  function onScrollThrottled(){
+    if(ticking)return;
+    ticking=true;
+    requestAnimationFrame(function(){onScroll();ticking=false;});
+  }
+  window.addEventListener('scroll',onScrollThrottled,{passive:true});
+  window.addEventListener('resize',onScrollThrottled);
   onScroll();
 
   // Projects: closed by default, click the row to open, arrow to view
