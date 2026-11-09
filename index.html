@@ -110,9 +110,15 @@ section.collapsed{padding-block:36px}
 @keyframes rise{from{transform:translateY(105%)}to{transform:none}}
 @keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 
-/* Stat ledger */
-.ledger{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-strong);border-left:1px solid var(--line)}
-.stat{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 18px 20px;display:flex;flex-direction:column;gap:10px;min-width:0;transition:background .3s}
+/* Stat ledger: a tickertape strip, two copies of the track back to back for a seamless loop */
+.ledger{position:relative;overflow:hidden;border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line)}
+.ledger::before,.ledger::after{content:"";position:absolute;top:0;bottom:0;width:56px;z-index:1;pointer-events:none}
+.ledger::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+.ledger::after{right:0;background:linear-gradient(270deg,var(--bg),transparent)}
+.track{display:flex;width:max-content;animation:ticker 40s linear infinite}
+.ledger:hover .track,.ledger:focus-within .track{animation-play-state:paused}
+.stats{display:flex;flex:none}
+.stat{flex:0 0 auto;width:clamp(200px,21vw,260px);border-right:1px solid var(--line);padding:22px 18px 20px;display:flex;flex-direction:column;gap:10px;min-width:0;transition:background .3s}
 .stat .k{font-size:0.6875rem;color:var(--faint);font-weight:600}
 .stat .v{font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-0.06em;line-height:1;white-space:nowrap}
 .stat .v{display:flex;align-items:center}
@@ -120,7 +126,8 @@ section.collapsed{padding-block:36px}
 .stat .d{font-size:var(--step-0);color:var(--muted);line-height:1.4;transition:color .3s}
 .stat:hover{background:var(--fg)}
 .stat:hover .v,.stat:hover .d,.stat:hover .k,.stat:hover .v small{color:var(--bg)}
-@media (max-width:720px){.ledger{grid-template-columns:repeat(2,1fr)}}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (max-width:720px){.stat{width:200px}}
 
 /* Experience */
 .xp{display:flex;flex-direction:column}
@@ -363,14 +370,28 @@ body{transition:background-color .4s,color .4s}
   </div>
 
   <div class="ledger" aria-label="Key numbers">
-    <div class="stat"><span class="k">#01</span><span class="v"><span class="cu" data-to="2500">2,500</span><small>+ MW</small></span><span class="d">of solar deals evaluated in about 3 months</span></div>
-    <div class="stat"><span class="k">#02</span><span class="v">₹<span class="cu" data-to="81">81</span><small>L+</small></span><span class="d">raised in sponsorship across 50+ partners</span></div>
-    <div class="stat"><span class="k">#03</span><span class="v">&lt;3<small> min</small></span><span class="d">to generate a 20-page term sheet, down from days</span></div>
-    <div class="stat"><span class="k">#04</span><span class="v"><span class="cu" data-to="1">1</span>M<small>+</small></span><span class="d">scenarios run through my Python engine</span></div>
-    <div class="stat"><span class="k">#05</span><span class="v"><span class="cu" data-to="15">15</span><small>+</small></span><span class="d">Indian states mapped from 80+ regulatory documents</span></div>
-    <div class="stat"><span class="k">#06</span><span class="v"><span class="cu" data-to="100">100</span><small>+</small></span><span class="d">deals tracked in a system I built</span></div>
-    <div class="stat"><span class="k">#07</span><span class="v"><span class="cu" data-to="5000">5,000</span><small>+</small></span><span class="d">daily active users on a campus app I helped roll out</span></div>
-    <div class="stat"><span class="k">#08</span><span class="v"><span class="cu" data-to="7.5" data-dec="1">7.5</span><small>×</small></span><span class="d">growth in a bank partner's campus account</span></div>
+    <div class="track">
+      <div class="stats">
+        <div class="stat"><span class="k">#01</span><span class="v"><span class="cu" data-to="2500">2,500</span><small>+ MW</small></span><span class="d">of solar deals evaluated in about 3 months</span></div>
+        <div class="stat"><span class="k">#02</span><span class="v">₹<span class="cu" data-to="81">81</span><small>L+</small></span><span class="d">raised in sponsorship across 50+ partners</span></div>
+        <div class="stat"><span class="k">#03</span><span class="v">&lt;3<small> min</small></span><span class="d">to generate a 20-page term sheet, down from days</span></div>
+        <div class="stat"><span class="k">#04</span><span class="v"><span class="cu" data-to="1">1</span>M<small>+</small></span><span class="d">scenarios run through my Python engine</span></div>
+        <div class="stat"><span class="k">#05</span><span class="v"><span class="cu" data-to="15">15</span><small>+</small></span><span class="d">Indian states mapped from 80+ regulatory documents</span></div>
+        <div class="stat"><span class="k">#06</span><span class="v"><span class="cu" data-to="100">100</span><small>+</small></span><span class="d">deals tracked in a system I built</span></div>
+        <div class="stat"><span class="k">#07</span><span class="v"><span class="cu" data-to="5000">5,000</span><small>+</small></span><span class="d">daily active users on a campus app I helped roll out</span></div>
+        <div class="stat"><span class="k">#08</span><span class="v"><span class="cu" data-to="7.5" data-dec="1">7.5</span><small>×</small></span><span class="d">growth in a bank partner's campus account</span></div>
+      </div>
+      <div class="stats" aria-hidden="true">
+        <div class="stat"><span class="k">#01</span><span class="v"><span class="cu" data-to="2500">2,500</span><small>+ MW</small></span><span class="d">of solar deals evaluated in about 3 months</span></div>
+        <div class="stat"><span class="k">#02</span><span class="v">₹<span class="cu" data-to="81">81</span><small>L+</small></span><span class="d">raised in sponsorship across 50+ partners</span></div>
+        <div class="stat"><span class="k">#03</span><span class="v">&lt;3<small> min</small></span><span class="d">to generate a 20-page term sheet, down from days</span></div>
+        <div class="stat"><span class="k">#04</span><span class="v"><span class="cu" data-to="1">1</span>M<small>+</small></span><span class="d">scenarios run through my Python engine</span></div>
+        <div class="stat"><span class="k">#05</span><span class="v"><span class="cu" data-to="15">15</span><small>+</small></span><span class="d">Indian states mapped from 80+ regulatory documents</span></div>
+        <div class="stat"><span class="k">#06</span><span class="v"><span class="cu" data-to="100">100</span><small>+</small></span><span class="d">deals tracked in a system I built</span></div>
+        <div class="stat"><span class="k">#07</span><span class="v"><span class="cu" data-to="5000">5,000</span><small>+</small></span><span class="d">daily active users on a campus app I helped roll out</span></div>
+        <div class="stat"><span class="k">#08</span><span class="v"><span class="cu" data-to="7.5" data-dec="1">7.5</span><small>×</small></span><span class="d">growth in a bank partner's campus account</span></div>
+      </div>
+    </div>
   </div>
 
   <section id="skills">
